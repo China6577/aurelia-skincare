@@ -1,0 +1,160 @@
+/* ---- 品牌理念 ---- */
+.pillars {
+  background: var(--pearl);
+}
+
+.pillarsHead {
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.pillarsHead h2 {
+  margin-top: 1.2rem;
+}
+
+.accent {
+  font-style: italic;
+  color: var(--champagne-deep);
+}
+
+.pillarGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.8rem, 3.5vw, 3.2rem);
+}
+
+.pillar {
+  position: relative;
+}
+
+.pillarFigure {
+  aspect-ratio: 3 / 3.6;
+  border-radius: var(--radius);
+  margin-bottom: 1.6rem;
+}
+
+.pillarIndex {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--champagne);
+  font-size: 0.95rem;
+}
+
+.pillarTitle {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 2rem;
+  margin: 0.3rem 0 0.8rem;
+}
+
+.pillarTitle span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+.pillarDesc {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--muted);
+}
+
+/* ---- 明星产品 ---- */
+.featured {
+  background: linear-gradient(180deg, var(--pearl), var(--ivory));
+}
+
+.featuredHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.featuredHead h2 {
+  margin-top: 1rem;
+}
+
+.viewAll {
+  font-size: 0.76rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--champagne);
+  padding-bottom: 0.4rem;
+  white-space: nowrap;
+  transition: color 0.4s;
+}
+
+.viewAll:hover {
+  color: var(--champagne-deep);
+}
+
+.productRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+}
+
+/* ---- 结尾 CTA ---- */
+.finale {
+  text-align: center;
+  padding-block: calc(var(--section-gap) * 1.1);
+  background:
+    radial-gradient(50% 60% at 50% 100%, rgba(198, 161, 91, 0.12), transparent 70%),
+    var(--pearl);
+}
+
+.finaleTitle {
+  margin: 1.4rem 0 2.8rem;
+}
+
+.finaleTitle em {
+  font-style: italic;
+  color: var(--champagne-deep);
+}
+
+.finaleCta {
+  display: inline-block;
+  padding: 1.05rem 3rem;
+  background: var(--obsidian);
+  color: var(--ivory);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  transition:
+    background 0.5s var(--ease-lux),
+    transform 0.5s var(--ease-lux);
+}
+
+.finaleCta:hover {
+  background: var(--champagne-deep);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .productRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .pillarGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredHead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .productRow {
+    grid-template-columns: 1fr;
+  }
+}

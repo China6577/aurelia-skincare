@@ -1,0 +1,61 @@
+.header {
+  padding-top: clamp(9rem, 16vw, 13rem);
+  padding-bottom: 3rem;
+}
+
+.header h1 {
+  margin-top: 1.2rem;
+}
+
+.accent {
+  font-style: italic;
+  color: var(--champagne-deep);
+}
+
+.headerLead {
+  margin-top: 1.6rem;
+}
+
+/* ---- 分类筛选 ---- */
+.filters {
+  display: flex;
+  gap: 2.2rem;
+  margin-top: 3.2rem;
+  flex-wrap: wrap;
+}
+
+.filter {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.5rem 0.2rem;
+  transition: color 0.35s;
+}
+
+.filter:hover {
+  color: var(--ink);
+}
+
+.filterActive {
+  color: var(--ink);
+}
+
+.underline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--champagne);
+}
+
+/* ---- 网格区 ---- */
+.gridSection {
+  padding-bottom: var(--section-gap);
+}

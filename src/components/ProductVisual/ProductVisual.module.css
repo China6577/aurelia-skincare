@@ -1,0 +1,11 @@
+.visual {
+  display: block;
+  filter: drop-shadow(0 24px 32px rgba(22, 20, 26, 0.14));
+}
+
+.label {
+  font-family: "Manrope", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  font-weight: 600;
+}

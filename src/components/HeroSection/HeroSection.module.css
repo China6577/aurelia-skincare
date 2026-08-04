@@ -1,0 +1,158 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(60% 50% at 78% 40%, rgba(198, 161, 91, 0.14), transparent 70%),
+    linear-gradient(180deg, var(--ivory) 0%, var(--pearl) 100%);
+}
+
+/* 柔和氛围光斑 */
+.glow {
+  position: absolute;
+  top: 12%;
+  right: 6%;
+  width: 44vw;
+  height: 44vw;
+  max-width: 640px;
+  max-height: 640px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(232, 201, 138, 0.28) 0%,
+    rgba(232, 201, 138, 0) 65%
+  );
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 96px;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  margin: 1.4rem 0 1.6rem;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--champagne-deep);
+}
+
+.sub {
+  margin-bottom: 2.6rem;
+}
+
+/* ---- CTA 按钮：极简描边风格 ---- */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 2.4rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  transition:
+    background 0.5s var(--ease-lux),
+    color 0.5s var(--ease-lux),
+    border-color 0.5s var(--ease-lux);
+}
+
+.cta:hover {
+  background: var(--obsidian);
+  border-color: var(--obsidian);
+  color: var(--ivory);
+}
+
+.ctaArrow {
+  transition: transform 0.45s var(--ease-lux);
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(6px);
+}
+
+/* ---- 产品舞台 ---- */
+.stage {
+  position: relative;
+  height: min(64vh, 560px);
+}
+
+.stage > div {
+  position: absolute;
+}
+
+.main {
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 2;
+}
+
+.backLeft {
+  left: 2%;
+  bottom: 8%;
+  opacity: 0.85;
+}
+
+.backRight {
+  right: 0%;
+  top: 4%;
+  opacity: 0.7;
+}
+
+/* ---- 滚动提示 ---- */
+.scrollHint {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  translate: -50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.scrollLine {
+  width: 1px;
+  height: 44px;
+  background: var(--champagne);
+  transform-origin: top;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .sub {
+    margin-inline: auto;
+  }
+
+  .stage {
+    height: 380px;
+    order: -1;
+  }
+
+  .backLeft,
+  .backRight {
+    display: none;
+  }
+}

@@ -1,0 +1,145 @@
+/* ============================================================
+   AURELIA 设计系统 — 全局样式
+   视觉语言：Apple 式极简 × 奢侈美容品牌
+   配色：珍珠白 / 米色 / 香槟金 / 黑曜石黑
+   ============================================================ */
+
+:root {
+  /* ---- 色彩 ---- */
+  --pearl: #f7f4ee;          /* 珍珠白主背景 */
+  --ivory: #fdfcf9;          /* 更亮的留白 */
+  --stone: #ece5d8;          /* 米色分隔 */
+  --champagne: #c6a15b;      /* 香槟金强调 */
+  --champagne-deep: #a5813f; /* 深香槟（hover） */
+  --obsidian: #16141a;       /* 黑曜石黑 */
+  --obsidian-soft: #26222c;  /* 深区块背景 */
+  --ink: #1d1a22;            /* 正文深色 */
+  --muted: #6f6a75;          /* 次级文字 */
+  --line: rgba(22, 20, 26, 0.1);
+
+  /* ---- 字体 ---- */
+  --font-display: "Cormorant Garamond", "Songti SC", "STSong", serif;
+  --font-body: "Manrope", "PingFang SC", "Microsoft YaHei", sans-serif;
+
+  /* ---- 节奏 ---- */
+  --section-gap: clamp(6rem, 12vw, 11rem);
+  --container: 1280px;
+  --radius: 4px;
+  --ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--pearl);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--champagne);
+  color: var(--ivory);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---- 通用版式工具类 ---- */
+
+.container {
+  width: min(100% - 3rem, var(--container));
+  margin-inline: auto;
+}
+
+/* 超大超细标题 —— 品牌排印核心 */
+.display-xl {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+}
+
+.display-lg {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+  line-height: 1.1;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--champagne-deep);
+  font-weight: 600;
+}
+
+.lead {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  color: var(--muted);
+  max-width: 56ch;
+  font-weight: 300;
+}
+
+/* 页面上通用的章节间距 */
+.section {
+  padding-block: var(--section-gap);
+  position: relative;
+}
+
+/* ---- 双色调编辑图片处理：灰度 + 香槟蒙版，保证风格统一 ---- */
+.duotone {
+  position: relative;
+  overflow: hidden;
+}
+
+.duotone img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05) brightness(1.02);
+}
+
+.duotone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(198, 161, 91, 0.22),
+    rgba(22, 20, 26, 0.12)
+  );
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* 细腻噪点覆层，增加胶片质感 */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}

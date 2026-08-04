@@ -1,0 +1,86 @@
+.footer {
+  background: var(--obsidian);
+  color: rgba(253, 252, 249, 0.75);
+  padding-top: clamp(4rem, 8vw, 7rem);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  padding-bottom: 4rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.34em;
+  color: var(--ivory);
+  margin-bottom: 1.2rem;
+}
+
+.slogan {
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 2;
+  opacity: 0.7;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-size: 0.85rem;
+}
+
+.colTitle {
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--champagne);
+  margin-bottom: 0.6rem;
+}
+
+.col a {
+  opacity: 0.7;
+  transition: opacity 0.3s, color 0.3s;
+}
+
+.col a:hover {
+  opacity: 1;
+  color: var(--champagne);
+}
+
+.address {
+  font-style: normal;
+  opacity: 0.7;
+  line-height: 2;
+  font-size: 0.85rem;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 1.6rem;
+  border-top: 1px solid rgba(253, 252, 249, 0.12);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+}
+
+@media (max-width: 860px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

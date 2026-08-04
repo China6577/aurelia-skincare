@@ -1,0 +1,185 @@
+/* ---- 首屏 ---- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 96px;
+  background:
+    radial-gradient(55% 55% at 75% 45%, rgba(198, 161, 91, 0.12), transparent 70%),
+    linear-gradient(180deg, var(--ivory), var(--pearl));
+  overflow: hidden;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.heroCopy h1 {
+  margin-top: 1.2rem;
+}
+
+.heroIntro {
+  margin-top: 1.4rem;
+}
+
+.heroMeta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.2rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--champagne);
+}
+
+.heroStage {
+  display: grid;
+  place-items: center;
+}
+
+/* ---- 产品故事 ---- */
+.story {
+  background: var(--ivory);
+}
+
+.storyInner {
+  max-width: 860px;
+}
+
+.storyText {
+  margin-top: 1.6rem;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  line-height: 1.65;
+}
+
+/* ---- 功效 ---- */
+.benefits {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  background: var(--stone);
+}
+
+.benefitRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.benefit {
+  border-top: 1px solid var(--champagne);
+  padding-top: 1.4rem;
+}
+
+.benefitIndex {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--champagne-deep);
+}
+
+.benefit p {
+  margin-top: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/* ---- 成分 ---- */
+.ingredients h2 {
+  margin-top: 1rem;
+}
+
+.accent {
+  font-style: italic;
+  color: var(--champagne-deep);
+}
+
+.ingredientList {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  max-width: 900px;
+}
+
+/* ---- 使用方法 ---- */
+.usage {
+  background: var(--obsidian);
+  color: var(--ivory);
+  padding-block: clamp(4rem, 9vw, 7.5rem);
+}
+
+.usageInner {
+  max-width: 760px;
+  text-align: center;
+}
+
+.usageText {
+  margin-top: 1.6rem;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  line-height: 1.8;
+  color: rgba(253, 252, 249, 0.85);
+}
+
+/* ---- 相关产品 ---- */
+.relatedHead {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.relatedHead h2 {
+  margin-top: 1rem;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+
+.backWrap {
+  margin-top: 3.5rem;
+  text-align: center;
+}
+
+.back {
+  font-size: 0.78rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.3s;
+}
+
+.back:hover {
+  color: var(--champagne-deep);
+}
+
+@media (max-width: 900px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .heroIntro {
+    margin-inline: auto;
+  }
+
+  .heroMeta {
+    justify-content: center;
+  }
+
+  .benefitRow,
+  .relatedGrid {
+    grid-template-columns: 1fr;
+  }
+}

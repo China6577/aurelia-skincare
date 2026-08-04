@@ -1,0 +1,57 @@
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.6rem;
+  align-items: baseline;
+  padding: 2rem 0 2.4rem;
+}
+
+.concentration {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--champagne-deep);
+}
+
+.name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.alias {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+.benefit {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--muted);
+}
+
+/* 底部分隔线：进入视口时从左向右生长 */
+.rule {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--champagne), var(--line));
+  transform-origin: left;
+}
+
+@media (max-width: 560px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+}
